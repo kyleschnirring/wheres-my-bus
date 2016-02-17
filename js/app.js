@@ -1,6 +1,5 @@
 var output = $('#output');
 var mapElement = $('#map').get(0);
-var testLocation = {};
 
 if (!Location.checkAvailability) {
   output.html('<p>Geolocation is not supported by your browser</p>');
