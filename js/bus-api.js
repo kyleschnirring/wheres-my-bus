@@ -1,0 +1,3 @@
+(function getStop(module) {
+
+})(window);
