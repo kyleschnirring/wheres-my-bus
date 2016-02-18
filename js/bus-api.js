@@ -15,6 +15,18 @@
       });
   };
 
+  Stop.prototype.getArrivals = function(stop, callback) {
+    var api_url = '/where/arrivals-and-departures-for-stop/'
+                  + stop.stopID
+                  + '.xml?key=TEST';
+    $.getJSON(api_url,
+      function(data, message, xhr) {
+        stop.arrivalsData = data;
+        if (callback) callback();
+      });
+  };
+
   module.Stop = Stop;
   module.Stop.getStopData = Stop.prototype.getStopData;
+  module.Stop.getArrivals = Stop.prototype.getArrivals;
 })(window);
