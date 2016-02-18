@@ -18,16 +18,16 @@ function geoFindMe() {
     var position = {lat: latitude, lng: longitude};
     var mapCenter  = new google.maps.LatLng(latitude, longitude);
     var mapOptions = {
-        zoom: 17,
-        center: mapCenter,
-        mapTypeId : google.maps.MapTypeId.ROADMAP };
+      zoom: 17,
+      center: mapCenter,
+      mapTypeId : google.maps.MapTypeId.ROADMAP };
 
-    var mapElement = $("#map").get(0);
+    var mapElement = $('#map').get(0);
     var map = new google.maps.Map(mapElement, mapOptions);
     var marker = new google.maps.Marker({
       map: map,
       position: position,
-      title:"Your location"
+      title: 'Your location'
     });
 
     $.get('/oneBusAway/where/stops-for-location.json?key=TEST'
@@ -39,7 +39,7 @@ function geoFindMe() {
     })
     .done(function() {
       $('#stops').append(JSON.stringify(stopsData, null, 2));
-    })
+    });
   };
 
   function error() {
@@ -50,6 +50,5 @@ function geoFindMe() {
 
   navigator.geolocation.getCurrentPosition(success, error);
 }
-
 
 $('.myLocation').on('click', geoFindMe);
