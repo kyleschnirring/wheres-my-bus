@@ -5,7 +5,7 @@
   };
 
   Stop.prototype.getStopData = function(stop, callback) {
-    $.getJSON('/oneBusAway/where/stops-for-location.json?key=TEST'
+    $.getJSON('/oneBusAway/where/stops-for-location.json'
       + '&lat=' + stop.latitude
       + '&lon=' + stop.longitude
       + '&radius=100',
@@ -18,7 +18,7 @@
   Stop.prototype.getArrivals = function(stop, callback) {
     var api_url = '/where/arrivals-and-departures-for-stop/'
                   + stop.stopID
-                  + '.xml?key=TEST';
+                  + '.json';
     $.getJSON(api_url,
       function(data, message, xhr) {
         stop.arrivalsData = data;

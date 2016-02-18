@@ -1,7 +1,7 @@
 var requestProxy = require('express-request-proxy'),
   express = require('express'),
   port = process.env.PORT || 3000,
-  api_key = '9d437522-db67-4011-b41a-ed30e4dcd3ef',
+  api_key = process.env.ONEBUS_KEY,
   app = express();
 
 var proxyOneBusAway = function(request, response) {
