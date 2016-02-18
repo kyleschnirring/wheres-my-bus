@@ -16,7 +16,7 @@
   };
 
   Stop.prototype.getArrivals = function(stop, callback) {
-    var api_url = '/where/arrivals-and-departures-for-stop/'
+    var api_url = '/oneBusAway/where/arrivals-and-departures-for-stop/'
                   + stop.stopID
                   + '.json';
     $.getJSON(api_url,

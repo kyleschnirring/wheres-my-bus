@@ -29,9 +29,9 @@ function success(position) {
   stop = new Stop(currentLocation.latitude, currentLocation.longitude);
 
   // test ID provided for getArrivals testing
-  stop.stopID = '1_26698';
+  //stop.stopID = '1_26698';
   Stop.getStopData(stop, renderList);
-  Stop.getArrivals(stop, testArrivals);
+  //Stop.getArrivals(stop, testArrivals);
 }
 
 function renderList() {
