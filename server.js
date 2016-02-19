@@ -14,6 +14,7 @@ var insertKey = function(request, response) {
 
 var proxyOneBusAway = function(request, response) {
   console.log('Routing OneBusAway request for', request.params[0]);
+  //console.log(request);
   (requestProxy({
     url: 'http://api.pugetsound.onebusaway.org/api/' + request.params[0]
   }))(request, response);

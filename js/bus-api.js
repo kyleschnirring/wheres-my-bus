@@ -4,7 +4,7 @@
     this.longitude = longitude;
   };
 
-  Stop.prototype.getStopData = function(stop, callback) {
+  Stop.getStopData = function(stop, callback) {
     $.getJSON('/oneBusAway/where/stops-for-location.jsonTEST'
               + '&lat=' + stop.latitude
               + '&lon=' + stop.longitude
@@ -15,7 +15,7 @@
       });
   };
 
-  Stop.prototype.getArrivals = function(stop, callback) {
+  Stop.getArrivals = function(stop, callback) {
     var apiUrl = '/oneBusAway/where/arrivals-and-departures-for-stop/'
                  + stop.stopID
                  + '.jsonTEST';
@@ -27,6 +27,4 @@
   };
 
   module.Stop = Stop;
-  module.Stop.getStopData = Stop.prototype.getStopData;
-  module.Stop.getArrivals = Stop.prototype.getArrivals;
 })(window);
