@@ -30,7 +30,7 @@ function success(position) {
   stops = new Stops(currentLocation.latitude, currentLocation.longitude);
 
   // test ID provided for getArrivals testing
-  stops.stopID = '1_26698';
+  stops.stopID = '1_26610';
   Stops.getStopData(stops, renderList);
   Stops.getArrivals(stops, testArrivals);
 }
@@ -42,7 +42,6 @@ function renderList() {
     + ' (' + element.direction + '): '
     + element.name;
   });
-  console.log(stopsList);
   stopsList.forEach(function(element) {
     $('#stops').append('<li><a href=\"#\">' + element + '</a></li>');
   });

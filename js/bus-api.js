@@ -26,7 +26,7 @@
               + '.jsonTEST';
     $.getJSON(url,
       function(data, message, xhr) {
-        stop.arrivalsData = data;
+        stop.arrivalsData = JSON.parse(data);
         if (callback) callback();
       });
   };
