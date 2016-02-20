@@ -27,16 +27,16 @@ function success(position) {
     icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
   });
 
-  stop = new Stops(currentLocation.latitude, currentLocation.longitude);
+  stops = new Stops(currentLocation.latitude, currentLocation.longitude);
 
   // test ID provided for getArrivals testing
-  stop.stopID = '1_26698';
-  Stops.getStopData(stop, renderList);
-  Stops.getArrivals(stop, testArrivals);
+  stops.stopID = '1_26698';
+  Stops.getStopData(stops, renderList);
+  Stops.getArrivals(stops, testArrivals);
 }
 
 function renderList() {
-  var stopsRaw = stop.stopsData.data.list;
+  var stopsRaw = stops.stopsData.data.list;
   var stopsList = stopsRaw.map(function(element) {
     return element.id
     + ' (' + element.direction + '): '
@@ -49,7 +49,7 @@ function renderList() {
 }
 
 function testArrivals() {
-  console.log(stop.arrivalsData);
+  console.log(stops.arrivalsData);
 }
 
 function error() {
