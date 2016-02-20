@@ -7,10 +7,9 @@ var requestProxy = require('express-request-proxy'),
 
 function proxyRequest(request, response) {
   var url = 'http://api.pugetsound.onebusaway.org/api/'
-    + request.params[0];
+    + request.params[0].replace('TEST', '?key=' + apiKey);
 
   superagent.get(url)
-  .query({key: apiKey})
   .end(function(error, res) {
     console.log('Routed oneBusAway request for: ' + url);
     response.json(res.text);

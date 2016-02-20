@@ -5,14 +5,12 @@
   };
 
   Stop.getStopData = function(stop, callback) {
-    $.get('/oneBusAway/where/stops-for-location.json'
+    $.get('/oneBusAway/where/stops-for-location.jsonTEST'
           + '&lat=' + stop.latitude
           + '&lon=' + stop.longitude
           + '&radius=100')
       .done(function(data, message, xhr) {
-        console.log('got here');
-        console.log(data);
-        stop.stopsData = data;
+        stop.stopsData = JSON.parse(data);
         if (callback) callback();
       })
       .fail(function(jqxhr, textStatus, error) {
@@ -24,7 +22,7 @@
   Stop.getArrivals = function(stop, callback) {
     var url = '/oneBusAway/where/arrivals-and-departures-for-stop/'
               + stop.stopID
-              + '.json';
+              + '.jsonTEST';
     $.getJSON(url,
       function(data, message, xhr) {
         stop.arrivalsData = data;
