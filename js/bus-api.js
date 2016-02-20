@@ -5,21 +5,23 @@
   };
 
   Stop.getStopData = function(stop, callback) {
-    $.getJSON('/oneBusAway/where/stops-for-location.jsonTEST'
-              + '&lat=' + stop.latitude
-              + '&lon=' + stop.longitude
-              + '&radius=100',
+    $.get('/oneBusAway/where/stops-for-location.jsonTEST'
+          + '&lat=' + stop.latitude
+          + '&lon=' + stop.longitude
+          + '&radius=100',
       function(data, message, xhr) {
+        console.log('got here');
+        console.log(data);
         stop.stopsData = data;
         if (callback) callback();
       });
   };
 
   Stop.getArrivals = function(stop, callback) {
-    var apiUrl = '/oneBusAway/where/arrivals-and-departures-for-stop/'
-                 + stop.stopID
-                 + '.jsonTEST';
-    $.getJSON(apiUrl,
+    var url = '/oneBusAway/where/arrivals-and-departures-for-stop/'
+              + stop.stopID
+              + '.jsonTEST';
+    $.getJSON(url,
       function(data, message, xhr) {
         stop.arrivalsData = data;
         if (callback) callback();

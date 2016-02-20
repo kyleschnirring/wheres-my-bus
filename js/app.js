@@ -1,6 +1,7 @@
 var output = $('#output');
 var mapElement = $('#map').get(0);
 var stop = {};
+var test = {};
 
 if (!Location.checkAvailability) {
   output.html('<p>Geolocation is not supported by your browser</p>');
@@ -30,7 +31,8 @@ function success(position) {
 
   // test ID provided for getArrivals testing
   //stop.stopID = '1_26698';
-  Stop.getStopData(stop, renderList);
+  // Stop.getStopData(stop, renderList);
+  var test = Stop.getStopData(stop);
   //Stop.getArrivals(stop, testArrivals);
 }
 

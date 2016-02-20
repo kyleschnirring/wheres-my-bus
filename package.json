@@ -19,7 +19,8 @@
   "homepage": "https://github.com/kyleschnirring/wheres-my-bus#readme",
   "dependencies": {
     "express": "^4.13.4",
-    "express-request-proxy": "^1.1.0"
+    "express-request-proxy": "^1.1.0",
+    "superagent": "^1.7.2"
   },
   "devDependencies": {}
 }
