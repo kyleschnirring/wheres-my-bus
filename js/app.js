@@ -48,7 +48,7 @@ function renderList() {
 }
 
 function testArrivals() {
-  console.log(stops.arrivalsData);
+  console.log(stops.arrivalsData.data.entry.arrivalsAndDepartures);
 }
 
 function error() {
