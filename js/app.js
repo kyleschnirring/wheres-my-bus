@@ -27,12 +27,12 @@ function success(position) {
     icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
   });
 
-  stop = new Stop(currentLocation.latitude, currentLocation.longitude);
+  stop = new Stops(currentLocation.latitude, currentLocation.longitude);
 
   // test ID provided for getArrivals testing
   stop.stopID = '1_26698';
-  Stop.getStopData(stop, renderList);
-  Stop.getArrivals(stop, testArrivals);
+  Stops.getStopData(stop, renderList);
+  Stops.getArrivals(stop, testArrivals);
 }
 
 function renderList() {
